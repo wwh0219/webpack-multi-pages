@@ -7,7 +7,9 @@ const server = new WebpackDevServer(compiler, {
 	stats: {
 		colors: true
     },
-    contentBase: path.join(__dirname, "../dist")
+    contentBase: path.join(__dirname, "../dist"),
+    hot: true,
+    // inline:true
 });
 
 server.listen(7788, "127.0.0.1", function() {

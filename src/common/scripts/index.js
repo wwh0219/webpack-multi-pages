@@ -1,1 +1,4 @@
-require('../sass/home.scss')
+require('../sass/home.scss');
+if(module.hot){
+    module.hot.accept()
+  }

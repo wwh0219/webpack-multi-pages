@@ -15,13 +15,15 @@ for(var prop in pathConfig.entry){
 }
 
 entry.vendor = ['babel-polyfill'];//第三方公共库;
+entry['webpack/hot/dev-server']='webpack/hot/dev-server';
+entry['webpack-dev-server']='webpack-dev-server/client?http://localhost:7788/';
 module.exports = {
     entry: entry,
     output: {
         path: pathConfig.output,
         publicPath: "../",
-        filename: '[name].js',
-        chunkFilename: '[name].js'
+        filename: '[name].[hash].js',
+        chunkFilename: '[name].[hash].js'
     },
     resolve: {
         extensions: ['.js'],
@@ -32,5 +34,6 @@ module.exports = {
     module: {
         rules: loaders
     },
-    plugins:plugins
+    plugins:plugins,
+    // devServer:{inline:true}
 }
