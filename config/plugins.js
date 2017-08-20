@@ -48,6 +48,6 @@ var copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
     }
 
 });
-// plugins.push(new CopyWebpackPlugin(copyStaticPath))
+plugins.push(new CopyWebpackPlugin(copyStaticPath))
 
 module.exports = plugins

@@ -2,7 +2,8 @@
   "name": "webpack-multi-pages",
   "version": "0.0.1",
   "scripts": {
-    "build": "webpack --config ./config/webpack.base.js"
+    "build": "webpack --config ./config/webpack.base.js",
+    "dev": "node ./config/dev.js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -21,6 +22,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }
