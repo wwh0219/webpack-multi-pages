@@ -1,11 +1,12 @@
 const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const getDistPath=require('./utils').getDistPath;
 const extractSass = new ExtractTextPlugin({
-   filename: "[name].[contenthash].css",
-   disable: process.env.NODE_ENV === "development"
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
 });
-module.exports=[
+module.exports = [
     {
         test: /\.js$/,
         loader: 'babel-loader'
@@ -15,29 +16,24 @@ module.exports=[
         loader: 'url-loader',
         options: {
             limit: 10000,
-            name: path.resolve(pathConfig.asset, './img/[name].[chunkHash].[ext]')
+            name:'static/[name].[hash].[ext]',
         }
     },
     {
         test: /\.scss$/,
-        use: extractSass.extract({
-            use: [{
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader"
-            }],
-            // use style-loader in development
-            fallback: "style-loader"
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            //resolve-url-loader may be chained before sass-loader if necessary
+            use: ['css-loader', 'sass-loader']
         })
     },
     {
-        test: /\.ejs$/,
-        loader: 'ejs-html-loader',
-        options: {
-          title: 'The Ant: An Introduction',
-          season: 1,
-          episode: 9,
-          production: process.env.ENV === 'production'
+        test: /\.ejs$/, 
+        loader: 'ejs-loader', 
+        query: { 
+            variable: 'data', 
+            interpolate : '\\{\\{(.+?)\\}\\}', 
+            evaluate : '\\[\\[(.+?)\\]\\]' 
         }
-      }
+    }
 ]
