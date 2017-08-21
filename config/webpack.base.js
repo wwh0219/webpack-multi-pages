@@ -16,7 +16,7 @@ for(var prop in pathConfig.entry){
 
 entry.vendor = ['babel-polyfill'];//第三方公共库;
 entry['webpack/hot/dev-server']='webpack/hot/dev-server';
-entry['webpack-dev-server']='webpack-dev-server/client?http://localhost:7788/';
+entry['webpack-dev-server']=`webpack-dev-server/client?http://localhost:${pathConfig.port}/`;
 module.exports = {
     entry: entry,
     output: {
