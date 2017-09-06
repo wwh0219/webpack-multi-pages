@@ -35,8 +35,9 @@ module.exports={
     asset:assetPath,
     template:templateArray,
     src:srcPath,
-    static:entryArray.map(item=>{
-        return item.replace(path.basename(item),'static')
-    }),
+    static:[path.resolve(srcPath,'./common/static')],    
+    // entryArray.map(item=>{
+    //     return item.replace(path.basename(item),'static')
+    // }),
     port:7788
 };

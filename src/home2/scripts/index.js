@@ -1,1 +1,0 @@
-require('../sass/home.scss')

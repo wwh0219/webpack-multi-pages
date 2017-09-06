@@ -28,7 +28,8 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias:{
-            layout:path.resolve(__dirname,'../src/common/template')
+            layout:path.resolve(__dirname,'../src/common/template'),
+            common:path.resolve(pathConfig.src,'./common')
         }
     },
     module: {
