@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "build": "node ./config/build.js",
-    "dev": "node ./config/dev.js"
+    "dev": "node ./config/dev.js",
+    "watch":"webpack --config ./config/webpack.base.js -w"
   },
   "dependencies": {},
   "devDependencies": {

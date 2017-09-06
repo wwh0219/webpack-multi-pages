@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    {{data.styleSheet()}}
+    {%data.styleSheet()%}
 </head>
 <body>
     <p>aaaaaaaa6666666aaaaaaa</p>
-    <img src="./static/image/1.jpg" alt="">
-    <img src="./static/image/2.png" alt="">
+    <img src="{% require('../static/image/2.png') %}" alt="">
+    <!--<img src="./static/image/2.png" alt="">-->
 
-    {{data.script()}}
+    {%data.script()%}
 </body>
 </html>

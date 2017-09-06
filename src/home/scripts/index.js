@@ -1,2 +1,2 @@
 require('../sass/home.scss');
-alert('11')
+alert('33333')

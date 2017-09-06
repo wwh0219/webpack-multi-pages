@@ -39,8 +39,16 @@ module.exports = [
         loader: 'ejs-loader',
         query: {
             variable: 'data',
-            interpolate: '\\{\\{(.+?)\\}\\}',
+            interpolate: '\\{\\%(.+?)\\%\\}',
             evaluate: '\\[\\[(.+?)\\]\\]'
         }
     }
+    // {
+    //     test: /\.ejs$/,
+    //     loader: 'ejs-html-loader',
+    //     options: {
+    //         title: 'The Ant: An Introduction',
+    //         production: process.env.ENV === 'production'
+    //     }
+    // }
 ]
