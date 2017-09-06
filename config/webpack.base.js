@@ -21,20 +21,22 @@ module.exports = {
     entry: entry,
     output: {
         path: pathConfig.output,
-        publicPath: "../../",//二级目录“../../”  一级目录“../”
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].js'
+        publicPath: "../",//二级目录“../../”  一级目录“../”
+        filename: '[name].js',
+        chunkFilename: '[name].js'
     },
     resolve: {
         extensions: ['.js'],
         alias:{
             layout:path.resolve(__dirname,'../src/common/template'),
-            common:path.resolve(pathConfig.src,'./common')
+            common:path.resolve(pathConfig.src,'./common'),
+            vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js')
         }
     },
     module: {
         rules: loaders
     },
     plugins:plugins,
+    devtool:'cheap-eval-source-map'
     // devServer:{inline:true}
 }

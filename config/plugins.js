@@ -14,7 +14,7 @@ const staticPath = pathConfig.static;
 var plugins = [
     new ExtractTextPlugin({//抽出js中的css
         filename: (getPath) => {
-            return getPath('[name].[chunkhash].css');
+            return getPath('[name].css');
         }
     }),
     new webpack.optimize.CommonsChunkPlugin({//抽出公共库
