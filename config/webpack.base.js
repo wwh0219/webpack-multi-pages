@@ -21,7 +21,7 @@ module.exports = {
     entry: entry,
     output: {
         path: pathConfig.output,
-        publicPath: "../",
+        publicPath: "../../",//二级目录“../../”  一级目录“../”
         filename: '[name].[hash].js',
         chunkFilename: '[name].[hash].js'
     },
