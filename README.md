@@ -1,4 +1,4 @@
-# webpack-multi-pages
-src 目录结构
-pageExample 单页结构实例
-common 公共资源
+# webpack-multi-pages;
+<p>src 目录结构</p>
+<p>pageExample 单页结构实例</p>
+<p>common 公共资源</p>
