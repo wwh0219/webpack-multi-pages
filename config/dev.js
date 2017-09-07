@@ -5,6 +5,8 @@ const path=require("path");
 const WebpackDevServer = require("webpack-dev-server");
 const webpackConfig = require("./webpack.dev");
 const compiler = Webpack(webpackConfig);
+const opn = require('opn')
+
 const server = new WebpackDevServer(compiler, {
 	stats: {
 		colors: true
@@ -14,6 +16,9 @@ const server = new WebpackDevServer(compiler, {
     // inline:true
 });
 
+const uri=`http://localhost:${pathConfig.port}/`
+
 server.listen(pathConfig.port, "127.0.0.1", function() {
-	console.log(`Starting server on http://localhost:${pathConfig.port}/`);
+	console.log(`Starting server on ${uri}`);
+    opn(uri)
 });
