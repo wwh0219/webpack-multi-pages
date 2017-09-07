@@ -1,3 +1,4 @@
+process.env.NODE_ENV = 'development'
 const Webpack = require("webpack");
 const pathConfig=require("./pathConfig.js")
 const path=require("path");
