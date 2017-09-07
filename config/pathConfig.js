@@ -39,5 +39,5 @@ module.exports={
     // entryArray.map(item=>{
     //     return item.replace(path.basename(item),'static')
     // }),
-    port:7788
+    port:7799
 };

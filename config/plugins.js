@@ -36,8 +36,8 @@ templatePath.map(function (item) {//生产html文件
     plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
         template: item,
         filename: p.replace(/template/, 'index.html'),
-        chunks: ['vendor', p.replace(/template/, 'scripts')]
-
+        chunks: ['vendor','common/scripts', p.replace(/template/, 'scripts')],
+        chunksSortMode:'manual'
     }))
 });
 var copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
@@ -49,5 +49,5 @@ var copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
 
 });
 plugins.push(new CopyWebpackPlugin(copyStaticPath))
-plugins.push(new webpack.HotModuleReplacementPlugin());
+
 module.exports = plugins

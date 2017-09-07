@@ -2,7 +2,7 @@ const Webpack = require("webpack");
 const pathConfig=require("./pathConfig.js")
 const path=require("path");
 const WebpackDevServer = require("webpack-dev-server");
-const webpackConfig = require("./webpack.base");
+const webpackConfig = require("./webpack.dev");
 const compiler = Webpack(webpackConfig);
 const server = new WebpackDevServer(compiler, {
 	stats: {

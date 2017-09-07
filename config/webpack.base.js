@@ -14,9 +14,10 @@ for(var prop in pathConfig.entry){
     entry[p]= pathConfig.entry[prop]
 }
 
-entry.vendor = path.resolve(pathConfig.src,'./common/scripts/vendor');//第三方公共库;
-entry['webpack/hot/dev-server']='webpack/hot/dev-server';
-entry['webpack-dev-server']=`webpack-dev-server/client?http://localhost:${pathConfig.port}/`;
+
+entry.vendor = path.resolve(pathConfig.src, './common/scripts/vendor');//第三方公共库;
+
+
 module.exports = {
     entry: entry,
     output: {
@@ -37,6 +38,5 @@ module.exports = {
         rules: loaders
     },
     plugins:plugins,
-    devtool:'cheap-eval-source-map'
     // devServer:{inline:true}
 }

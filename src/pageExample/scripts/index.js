@@ -1,2 +1,2 @@
 require('../sass/home.scss');
-alert('33333')
+console.log(process.env.NODE_ENV)
