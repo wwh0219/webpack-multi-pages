@@ -14,7 +14,7 @@ var assetPath=path.resolve(__dirname,'../dist/asset/');
 var srcPath=path.resolve(__dirname,'../src');
 
 var entryArray=glob.sync(entryPath).filter((item)=>{
-    return !(/static|template/).test(item)
+    return !(/static|template|libSource/).test(item)
 });
 
 var templateArray=glob.sync(templatePath).filter((item)=>{

@@ -1,4 +1,8 @@
 require('../sass/home.scss');
-if(module.hot){
-    module.hot.accept()
-  }
+import Mint from 'mint-ui'
+import 'mint-ui/style.css'
+Mint.Toast({
+    message: 'ÌבÊ¾',
+    position: 'bottom',
+    duration: 5000
+  })

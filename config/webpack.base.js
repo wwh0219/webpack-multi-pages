@@ -31,7 +31,9 @@ module.exports = {
         alias:{
             layout:path.resolve(__dirname,'../src/common/template'),
             common:path.resolve(pathConfig.src,'./common'),
-            vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js')
+            vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js'),
+            'mint-ui':path.resolve(pathConfig.src,'./common/scripts/libSource/mint/lib')
+
         }
     },
     module: {

@@ -27,6 +27,14 @@ module.exports = [
         }
     },
     {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+            limit: 10000,
+            name: 'static/[name].[hash].[ext]'
+        }
+    },
+    {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
@@ -50,7 +58,19 @@ module.exports = [
             interpolate: '\\{\\%(.+?)\\%\\}',
             evaluate: '\\[\\[(.+?)\\]\\]'
         }
-    }
+    },
+    {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+            transformToRequire: {
+                video: 'src',
+                source: 'src',
+                img: 'src',
+                image: 'xlink:href'
+            }
+        }
+    },
     // {
     //     test: /\.ejs$/,
     //     loader: 'ejs-html-loader',
