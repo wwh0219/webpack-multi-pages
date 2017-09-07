@@ -12,12 +12,12 @@ module.exports = [
         loader: 'babel-loader',
         options: {
             presets: ['latest']
-          }
+        }
     },
     {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-          },
+    },
     {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
@@ -31,7 +31,15 @@ module.exports = [
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             //resolve-url-loader may be chained before sass-loader if necessary
-            use: ['css-loader', 'sass-loader']
+            use: [{
+                loader: "css-loader", options: {
+                    sourceMap: process.env.NODE_ENV === "development"
+                }
+            }, {
+                loader: "sass-loader", options: {
+                    sourceMap: process.env.NODE_ENV === "development"
+                }
+            }]
         })
     },
     {
