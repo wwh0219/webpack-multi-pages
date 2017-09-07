@@ -1,5 +1,5 @@
-var script=require('./script.ejs');
-var styleSheet=require('./styleSheet.ejs');
+var script=require('./footer.ejs');
+var styleSheet=require('./header.ejs');
 module.exports={
     script:script,
     styleSheet:styleSheet

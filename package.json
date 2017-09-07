@@ -4,7 +4,7 @@
   "scripts": {
     "build": "node ./config/build.js",
     "dev": "node ./config/dev.js",
-    "watch": "webpack --config ./config/webpack.base.js -w"
+    "watch": "webpack --config ./config/webpack.dev.js -w"
   },
   "dependencies": {},
   "devDependencies": {
