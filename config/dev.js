@@ -20,5 +20,5 @@ const uri=`http://localhost:${pathConfig.port}/`
 
 server.listen(pathConfig.port, "127.0.0.1", function() {
 	console.log(`Starting server on ${uri}`);
-    opn(uri)
+    // opn(uri)
 });

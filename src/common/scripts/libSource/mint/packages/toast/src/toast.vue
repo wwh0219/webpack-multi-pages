@@ -76,7 +76,6 @@
     },
 
     data() {
-      alert(123);
       return {
         visible: false
       };

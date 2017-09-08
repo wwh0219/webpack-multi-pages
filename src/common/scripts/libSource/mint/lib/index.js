@@ -6128,7 +6128,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
   },
 
   data: function data() {
-    alert(123);
     return {
       visible: false
     };
