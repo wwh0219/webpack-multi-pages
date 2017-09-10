@@ -2,10 +2,6 @@ const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const getDistPath = require('./utils').getDistPath;
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].css",
-    disable: process.env.NODE_ENV === "development"
-});
 module.exports = [
     {
         test: /\.js$/,
@@ -16,7 +12,17 @@ module.exports = [
     },
     {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [{
+                loader: "css-loader",
+                options: {
+                    minimize: true,
+                    sourceMap: process.env.NODE_ENV === "development"
+                }
+            }],
+
+        })
     },
     {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -41,13 +47,17 @@ module.exports = [
             //resolve-url-loader may be chained before sass-loader if necessary
             use: [{
                 loader: "css-loader", options: {
+                    minimize: true,
                     sourceMap: process.env.NODE_ENV === "development"
                 }
             }, {
                 loader: "sass-loader", options: {
                     sourceMap: process.env.NODE_ENV === "development"
                 }
-            }]
+            }, {
+                    loader: 'postcss-loader'
+            }
+            ]
         })
     },
     {

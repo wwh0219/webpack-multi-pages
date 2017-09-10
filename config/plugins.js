@@ -13,6 +13,7 @@ const staticPath = pathConfig.static;
 
 var plugins = [
     new ExtractTextPlugin({//抽出js中的css
+        disable:process.env.NODE_ENV == 'development',
         filename: (getPath) => {
             return getPath('[name].css');
         }
