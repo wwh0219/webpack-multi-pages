@@ -55,19 +55,24 @@ module.exports = [
                     sourceMap: process.env.NODE_ENV === "development"
                 }
             }, {
-                    loader: 'postcss-loader'
+                loader: 'postcss-loader'
             }
             ]
         })
     },
     {
         test: /\.ejs$/,
-        loader: 'ejs-loader',
-        query: {
-            variable: 'data',
-            interpolate: '\\{\\%(.+?)\\%\\}',
-            evaluate: '\\[\\[(.+?)\\]\\]'
-        }
+        use: [
+            {
+                loader: 'ejs-loader',
+                query: {
+                    variable: 'data',
+                    interpolate: '\\{\\%(.+?)\\%\\}',
+                    evaluate: '\\[\\[(.+?)\\]\\]'
+                }
+            },
+
+        ]
     },
     {
         test: /\.vue$/,

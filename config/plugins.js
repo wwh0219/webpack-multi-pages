@@ -11,7 +11,9 @@ const pathConfig = require('./pathConfig');
 const staticPath = pathConfig.static;
 
 
-var plugins = [
+const ReloadPlugin = require('reload-html-webpack-plugin');
+
+const plugins = [
     new ExtractTextPlugin({//抽出js中的css
         disable:process.env.NODE_ENV == 'development',
         filename: (getPath) => {
@@ -40,8 +42,9 @@ templatePath.map(function (item) {//生产html文件
         chunks: ['vendor','common/scripts', p.replace(/template/, 'scripts')],
         chunksSortMode:'manual'
     }))
+
 });
-var copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
+const copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
     return {
         from: item,
         to: getDistPath(item),
@@ -49,6 +52,6 @@ var copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
     }
 
 });
-plugins.push(new CopyWebpackPlugin(copyStaticPath))
+plugins.push(new CopyWebpackPlugin(copyStaticPath)/*, new ReloadPlugin()*/)
 
 module.exports = plugins

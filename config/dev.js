@@ -7,6 +7,7 @@ const webpackConfig = require("./webpack.dev");
 const compiler = Webpack(webpackConfig);
 const opn = require('opn')
 
+
 const server = new WebpackDevServer(compiler, {
 	stats: {
 		colors: true
