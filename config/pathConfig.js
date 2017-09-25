@@ -39,5 +39,6 @@ module.exports={
     // entryArray.map(item=>{
     //     return item.replace(path.basename(item),'static')
     // }),
-    port:7799
+    port:7799,
+    host:'http://192.168.100.3'
 };

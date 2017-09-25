@@ -6,11 +6,8 @@ const base = require('./webpack.base');
 const pathConfig = require('./pathConfig.js');
 
 const entry={}
-// const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
-// entry['webpack/hot/dev-server'] = 'webpack/hot/dev-server';
-// entry['webpack-dev-server']=`webpack-dev-server/client?http://localhost:${pathConfig.port}/`;
 for(let prop in base.entry){
-    let temp=[base.entry[prop],'webpack/hot/dev-server',`webpack-dev-server/client?http://localhost:${pathConfig.port}/`];
+    let temp=[base.entry[prop],'webpack/hot/dev-server',`webpack-dev-server/client?${pathConfig.host}:${pathConfig.port}/`];
     entry[prop]=temp
 }
 const dev = {

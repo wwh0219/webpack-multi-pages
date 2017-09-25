@@ -9,6 +9,8 @@ const opn = require('opn')
 
 
 const server = new WebpackDevServer(compiler, {
+    host: "0.0.0.0",
+    disableHostCheck: true,
 	stats: {
 		colors: true
     },
@@ -17,9 +19,9 @@ const server = new WebpackDevServer(compiler, {
     // inline:true
 });
 
-const uri=`http://localhost:${pathConfig.port}/`
+const uri=`${pathConfig.host}:${pathConfig.port}/`
 
-server.listen(pathConfig.port, "127.0.0.1", function() {
+server.listen(pathConfig.port, "0.0.0.0", function() {
 	console.log(`Starting server on ${uri}`);
     // opn(uri)
 });

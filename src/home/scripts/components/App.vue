@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-      aaaaaaaaaaaaaaaaaaaaaaaaa
+      {{num}}
+      {{x}}
+      99999999999
+      <div>
+          asdasdasd
+      </div>
   </div>
 </template>
 
@@ -8,12 +13,15 @@
 export default {
   name: 'app',
   mounted(){
-      console.log(111111111)
+
   },
-  methods:{
-    a:()=>{
-      console.log(44444444)
-    }
+  computed:{
+      num(){
+          return 888
+      },
+      x(){
+          return 'svgsdfbs'
+      }
   }
 }
 </script>
