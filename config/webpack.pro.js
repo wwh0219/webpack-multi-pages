@@ -6,8 +6,12 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var pathConfig = require('./pathConfig.js');
 const pro = {
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new UglifyJSPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+              warnings: false
+            },
+            sourceMap: false
+          }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')

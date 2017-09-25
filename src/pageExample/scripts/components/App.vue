@@ -6,8 +6,15 @@
 
 <script>
 export default {
+  el:'#app',
   name: 'app',
   mounted(){
+      console.log(111111111)
+  },
+  methods:{
+    a:()=>{
+      console.log(44444444)
+    }
   }
 }
 </script>
