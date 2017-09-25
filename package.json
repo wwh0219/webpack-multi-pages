@@ -4,7 +4,7 @@
   "scripts": {
     "build": "node ./config/build.js",
     "dev": "node ./config/dev.js",
-    "app": "node  ./config/webpack.app.js",
+    "app": "node  ./config/webpack.app.js"
   },
   "dependencies": {
     "mint-ui": "^2.2.9",
