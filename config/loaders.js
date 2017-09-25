@@ -78,6 +78,8 @@ module.exports = [
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
+            sourceMap: process.env.NODE_ENV === "development",
+            extract: process.env.NODE_ENV !== "development",
             transformToRequire: {
                 video: 'src',
                 source: 'src',
