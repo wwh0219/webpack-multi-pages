@@ -1,6 +1,10 @@
 /*使用glob库扫描src目录下的入口JS文件*/
 var glob=require('glob');
 
+var os=require('os')
+
+var host='http://'+os.networkInterfaces()['以太网'][1].address
+
 var path=require('path');
 
 var entryPath=path.resolve(__dirname,'../src/**/scripts');
@@ -40,5 +44,5 @@ module.exports={
     //     return item.replace(path.basename(item),'static')
     // }),
     port:7799,
-    host:'http://192.168.100.3'
+    host
 };

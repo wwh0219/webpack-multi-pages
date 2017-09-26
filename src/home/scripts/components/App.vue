@@ -2,7 +2,7 @@
   <div id="app">
       {{num}}
       {{x}}
-      99999999999
+      9999
       <div @click="open">
           asdasdasd
       </div>
@@ -17,7 +17,7 @@ export default {
   },
   computed:{
       num(){
-          return 888
+          return 999
       },
       x(){
           return 'svgsdfbs'
