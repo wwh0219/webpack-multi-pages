@@ -32,7 +32,8 @@ module.exports = {
             layout:path.resolve(__dirname,'../src/common/template'),
             common:path.resolve(pathConfig.src,'./common'),
             vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js'),
-            'mint-ui':path.resolve(pathConfig.src,'./common/scripts/libSource/mint/lib')
+            'mint-ui':path.resolve(pathConfig.src,'./common/scripts/libSource/mint/lib'),
+            '@':path.resolve(pathConfig.src)
 
         }
     },

@@ -1,3 +1,4 @@
+var isDev=require('./evn')
 const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -19,7 +20,7 @@ module.exports = [
                 loader: "css-loader",
                 options: {
                     minimize: true,
-                    sourceMap: process.env.NODE_ENV === "development"
+                    sourceMap: isDev
                 }
             }],
 
@@ -49,11 +50,11 @@ module.exports = [
             use: [{
                 loader: "css-loader", options: {
                     minimize: true,
-                    sourceMap: process.env.NODE_ENV === "development"
+                    sourceMap: isDev
                 }
             }, {
                 loader: "sass-loader", options: {
-                    sourceMap: process.env.NODE_ENV === "development"
+                    sourceMap: isDev
                 }
             }, {
                 loader: 'postcss-loader'
@@ -79,8 +80,8 @@ module.exports = [
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-            sourceMap: process.env.NODE_ENV === "development",
-            extract: process.env.NODE_ENV !== "development",
+            sourceMap: isDev,
+            extract: !isDev,
             transformToRequire: {
                 video: 'src',
                 source: 'src',

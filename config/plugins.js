@@ -1,3 +1,4 @@
+var isDev=require('./evn');
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -15,7 +16,7 @@ const ReloadPlugin = require('reload-html-webpack-plugin');
 
 const plugins = [
     new ExtractTextPlugin({//抽出js中的css
-        disable:process.env.NODE_ENV == 'development',
+        disable:isDev,
         filename: (getPath) => {
             return getPath('[name].css');
         }
