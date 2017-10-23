@@ -21,6 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "chalk": "^2.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.5",

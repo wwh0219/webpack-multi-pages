@@ -27,13 +27,15 @@ module.exports = {
         chunkFilename: '[name].js'
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js','.vue'],
         alias:{
             layout:path.resolve(__dirname,'../src/common/template'),
             common:path.resolve(pathConfig.src,'./common'),
             vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js'),
             'mint-ui':path.resolve(pathConfig.src,'./common/scripts/libSource/mint/lib'),
-            '@':path.resolve(pathConfig.src)
+            '@':path.resolve(pathConfig.src),
+            'muse-ui':path.resolve(pathConfig.src,'./common/scripts/libSource/muse-ui/src')
+
 
         }
     },

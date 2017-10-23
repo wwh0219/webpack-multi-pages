@@ -1,4 +1,5 @@
 import 'babel-polyfill';
 import Vue from 'vue';
-import MintUI from 'mint-ui';
+import Muse from 'muse-ui';
+Vue.use(Muse)
 

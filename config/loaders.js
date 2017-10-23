@@ -63,6 +63,26 @@ module.exports = [
         })
     },
     {
+        test: /\.less/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            //resolve-url-loader may be chained before sass-loader if necessary
+            use: [{
+                loader: "css-loader", options: {
+                    minimize: true,
+                    sourceMap: isDev
+                }
+            }, {
+                loader: 'postcss-loader'
+            }, {
+                loader: "less-loader", options: {
+                    sourceMap: isDev
+                }
+            }
+            ]
+        })
+    },
+    {
         test: /\.ejs$/,
         use: [
             {
