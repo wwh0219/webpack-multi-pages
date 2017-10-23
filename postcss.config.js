@@ -3,7 +3,7 @@ module.exports = {
         require('precss'),
         require('autoprefixer')(
             {
-                browsers:['ie >=8','iOS >=7','Firefox > 20','Chrome > 20','Safari > 10']
+                browsers:['ie >=8','iOS >=7','Firefox > 20','Chrome > 20','Safari > 8']
             }
         )
     ],

@@ -9,7 +9,7 @@ var path=require('path');
 
 var entryPath=path.resolve(__dirname,'../src/**/scripts');
 
-var templatePath=path.resolve(__dirname,'../src/**/template');
+var templatePath=path.resolve(__dirname,'../src/**/template.pug');
 
 var staticPath=path.resolve(__dirname,'../src/**/static');
 

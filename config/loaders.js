@@ -104,7 +104,7 @@ module.exports = [
         test: /\.pug/,
         use: [
             {
-                loader: 'html-loader',
+                loader: 'raw-loader',
             },
             {
                 loader: 'pug-html-loader',
