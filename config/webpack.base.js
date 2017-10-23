@@ -27,7 +27,7 @@ module.exports = {
         chunkFilename: '[name].js'
     },
     resolve: {
-        extensions: ['.js','.vue'],
+        extensions: ['.js','.vue','.pug'],
         alias:{
             layout:path.resolve(__dirname,'../src/common/template'),
             common:path.resolve(pathConfig.src,'./common'),

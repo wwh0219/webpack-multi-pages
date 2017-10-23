@@ -57,7 +57,9 @@ module.exports = [
                     sourceMap: isDev
                 }
             }, {
-                loader: 'postcss-loader'
+                loader: 'postcss-loader',options: {
+                    sourceMap: isDev
+                }
             }
             ]
         })
@@ -73,7 +75,9 @@ module.exports = [
                     sourceMap: isDev
                 }
             }, {
-                loader: 'postcss-loader'
+                loader: 'postcss-loader',options: {
+                    sourceMap: isDev
+                }
             }, {
                 loader: "less-loader", options: {
                     sourceMap: isDev
@@ -97,11 +101,26 @@ module.exports = [
         ]
     },
     {
+        test: /\.pug/,
+        use: [
+            {
+                loader: 'html-loader',
+            },
+            {
+                loader: 'pug-html-loader',
+                options:{
+                    data: {src:path.resolve(__dirname,'../src')}
+                }
+            }
+
+        ]
+    },
+    {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
             sourceMap: isDev,
-            extract: !isDev,
+            extractCSS: !isDev,
             transformToRequire: {
                 video: 'src',
                 source: 'src',
