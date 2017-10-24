@@ -1,2 +1,2 @@
-require('../sass/home.scss');
+require('../sass/home.less');
 import Muse from 'muse-ui'

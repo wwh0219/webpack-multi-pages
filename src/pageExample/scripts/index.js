@@ -1,4 +1,6 @@
+import '../sass/home.less'
 import '../sass/home.scss';
+
 import Muse from 'muse-ui';
 import Vue from 'vue'
 import App from './components/App.vue'
