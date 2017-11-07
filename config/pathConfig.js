@@ -7,7 +7,7 @@ var host='http://'+os.networkInterfaces()['以太网'][1].address
 
 var path=require('path');
 
-var entryPath=path.resolve(__dirname,'../src/**/scripts');
+var entryPath=path.resolve(__dirname,'../src/**/scripts/index.js');
 
 var templatePath=path.resolve(__dirname,'../src/**/template.pug');
 
@@ -29,7 +29,7 @@ var templateArray=glob.sync(templatePath).filter((item)=>{
 var entryPath={};
 
 entryArray.map((item)=>{
-    entryPath[item.replace(srcPath,'').replace(/.js$/g,'')]=item
+    entryPath[item.replace(srcPath,'').replace(/.js$/g,'').replace('scripts','')]=item
 })
 var outputPath=path.resolve(__dirname,'../dist');
 

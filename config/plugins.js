@@ -40,7 +40,7 @@ templatePath.map(function (item) {//生产html文件
     plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
         template: item,
         filename: p.replace('template.pug', 'index.html'),
-        chunks: ['vendor','common/scripts', p.replace(/template\.pug/, 'scripts')],
+        chunks: ['vendor','common/scripts', p.replace(/template\.pug/, 'index')],
         chunksSortMode:'manual'
     }))
 
