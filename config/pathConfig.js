@@ -39,7 +39,7 @@ module.exports={
     asset:assetPath,
     template:templateArray,
     src:srcPath,
-    static:[path.resolve(srcPath,'./common/static')],    
+    static:[path.resolve(srcPath,'./static')],
     // entryArray.map(item=>{
     //     return item.replace(path.basename(item),'static')
     // }),
