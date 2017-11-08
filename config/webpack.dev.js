@@ -6,7 +6,7 @@ const pathConfig = require('./pathConfig.js');
 
 const entry={}
 for(let prop in base.entry){
-    let temp=[base.entry[prop],'webpack/hot/dev-server',`webpack-dev-server/client?${pathConfig.host}:${pathConfig.port}/`];
+    let temp=['./dev-client',base.entry[prop]];
     entry[prop]=temp
 }
 const dev = {

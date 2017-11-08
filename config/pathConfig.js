@@ -31,7 +31,7 @@ var entryPath={};
 entryArray.map((item)=>{
     entryPath[item.replace(srcPath,'').replace(/.js$/g,'').replace('scripts','')]=item
 })
-var outputPath=path.resolve(__dirname,'../dist');
+var outputPath=path.resolve(__dirname,'../widget/dist');
 
 module.exports={
     entry:entryPath,
