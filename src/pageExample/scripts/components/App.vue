@@ -1,45 +1,66 @@
 <template>
     <div>
-        <mu-raised-button label="show snackbar" class="demo-snackbar-button" @click="showSnackbar"/>
-        <mu-raised-button label="show toast" class="demo-snackbar-button" @click="showToast"/>
-        <mu-snackbar v-if="snackbar" message="一段简单的文本" action="关闭" @actionClick="hideSnackbar" @close="hideSnackbar"/>
-        <mu-toast v-if="toast" message="一段简单的文本" @close="hideToast"/>
+        <group>
+            <x-switch :title="$t('Toggle')" v-model="show1" @on-change="show1change"></x-switch>
+        </group>
+        <div v-transfer-dom>
+            <loading :show="show1" :text="text1"></loading>
+        </div>
+        <div style="padding: 15px;">
+            <x-button @click.native="showLoading" type="primary">{{ $t('Show loading') }}</x-button>
+        </div>
     </div>
 </template>
 
+
+
 <script>
+    import { Loading, Group, XSwitch, XButton, TransferDomDirective as TransferDom } from 'vux'
+
     export default {
+        directives: {
+            TransferDom
+        },
+        components: {
+            Loading,
+            Group,
+            XSwitch,
+            XButton
+        },
         data () {
             return {
-                snackbar: false,
-                toast: false
+                show1: false,
+                text1: 'Processing'
             }
         },
         methods: {
-            showSnackbar () {
-                this.snackbar = true
-                if (this.snackTimer) clearTimeout(this.snackTimer)
-                this.snackTimer = setTimeout(() => { this.snackbar = false }, 2000)
+            showLoading () {
+                this.$vux.loading.show({
+                    text: 'Loading'
+                })
+
             },
-            hideSnackbar () {
-                this.snackbar = false
-                if (this.snackTimer) clearTimeout(this.snackTimer)
-            },
-            showToast () {
-                this.toast = true
-                if (this.toastTimer) clearTimeout(this.toastTimer)
-                this.toastTimer = setTimeout(() => { this.toast = false }, 2000)
-            },
-            hideToast () {
-                this.toast = false
-                if (this.toastTimer) clearTimeout(this.toastTimer)
+            show1change (val) {
+                if (val) {
+                    tick(0, (percent) => {
+                        if (percent === 100) {
+//                            this.show1 = false
+                            return
+                        }
+                        this.text1 = `${percent}%`
+                    })
+                }
             }
         }
     }
-</script>
 
-<style lang="css">
-    .demo-snackbar-button{
-        margin: 12px;
+    function tick (i, cb) {
+        setTimeout(function () {
+            i++
+            cb(i)
+            if (i < 100) {
+                tick(i, cb)
+            }
+        }, 10)
     }
-</style>
+</script>

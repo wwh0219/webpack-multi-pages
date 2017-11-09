@@ -6,7 +6,7 @@ const pathConfig = require('./pathConfig.js');
 
 const entry={}
 for(let prop in base.entry){
-    let temp=['./dev-client',base.entry[prop]];
+    let temp=[path.resolve(__dirname,'./dev-client'),base.entry[prop]];
     entry[prop]=temp
 }
 const dev = {

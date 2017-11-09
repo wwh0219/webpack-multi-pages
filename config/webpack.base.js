@@ -6,6 +6,7 @@ var pathConfig = require('./pathConfig.js');
 var plugins=require('./plugins');
 var loaders=require('./loaders');
 var getDistPath=require('./utils').getDistPath;
+const vuxLoader = require('vux-loader')
 /*输出配置*/
 var entry={};
 
@@ -18,7 +19,7 @@ for(var prop in pathConfig.entry){
 entry.vendor = path.resolve(pathConfig.src, './common/scripts/vendor');//第三方公共库;
 
 
-module.exports = {
+const baseConfig = {
     entry: entry,
     output: {
         path: pathConfig.output,
@@ -43,3 +44,10 @@ module.exports = {
     plugins:plugins,
     // devServer:{inline:true}
 }
+
+module.exports =vuxLoader.merge(baseConfig,{
+    options:{
+        projectRoot:path.resolve(__dirname,'../')
+    },
+    plugins: ['vux-ui']
+})

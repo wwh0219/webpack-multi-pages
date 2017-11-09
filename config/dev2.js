@@ -6,7 +6,6 @@ var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev')
-
 // default port where dev server listens for incoming traffic
 var port = pathConfig.port
 // automatically open browser, if not set will be false
@@ -18,7 +17,7 @@ var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.publicPath,
-    quiet: true
+    quiet: false
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
@@ -28,7 +27,6 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler, {
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-        console.log(data)
         hotMiddleware.publish({ action: 'reload' })
         cb()
     })
