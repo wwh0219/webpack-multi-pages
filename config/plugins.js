@@ -12,7 +12,6 @@ const pathConfig = require('./pathConfig');
 const staticPath = pathConfig.static;
 
 
-const ReloadPlugin = require('reload-html-webpack-plugin');
 
 const plugins = [
     new ExtractTextPlugin({//抽出js中的css
