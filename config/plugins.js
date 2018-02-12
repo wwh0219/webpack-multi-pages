@@ -17,7 +17,7 @@ const plugins = [
     new ExtractTextPlugin({//抽出js中的css
         disable:isDev,
         filename: (getPath) => {
-            return getPath('[name].css');
+            return getPath('[name].[contenthash].css');
         }
     }),
     new webpack.optimize.CommonsChunkPlugin({//抽出公共库

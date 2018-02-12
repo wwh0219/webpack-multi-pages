@@ -1,4 +1,4 @@
-var isDev=require('./evn')
+var isDev = require('./evn')
 const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -7,7 +7,7 @@ module.exports = [
     {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [path.resolve(__dirname,'../src')]
+        include: [path.resolve(__dirname, '../src')]
     },
     {
         test: /\.css$/,
@@ -50,7 +50,7 @@ module.exports = [
                     sourceMap: isDev
                 }
             }, {
-                loader: 'postcss-loader',options: {
+                loader: 'postcss-loader', options: {
                     sourceMap: isDev
                 }
             }, {
@@ -72,7 +72,7 @@ module.exports = [
                     sourceMap: isDev
                 }
             }, {
-                loader: 'postcss-loader',options: {
+                loader: 'postcss-loader', options: {
                     sourceMap: isDev
                 }
             }, {
@@ -101,16 +101,15 @@ module.exports = [
         test: /\.pug/,
         use: [
             {
-                loader: 'raw-loader',
-            },
-            {
-                loader: 'pug-html-loader',
-                options:{
-                    data: {src:path.resolve(__dirname,'../src')}
+                loader: 'pug-loader',
+                options: {
+                    pretty: true,
+                    basedir:pathConfig.src
                 }
             }
-
-        ]
+        ],
+        include: [path.resolve(__dirname, '../src')]
+        
     },
     {
         test: /\.vue$/,
@@ -135,3 +134,5 @@ module.exports = [
     //     }
     // }
 ]
+
+global.src=pathConfig.src

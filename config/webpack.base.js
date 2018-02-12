@@ -22,7 +22,7 @@ const baseConfig = {
     entry: entry,
     output: {
         path: pathConfig.output,
-        publicPath: pathConfig.publicPath,//二级目录“../../”  一级目录“../”
+        publicPath: pathConfig.publicPath,
         filename: '[name].js',
         chunkFilename: '[name].js'
     },

@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "node ./config/build.js",
-    "dev": "node ./config/dev.js",
-    "app": "node  ./config/webpack.app.js"
+    "dev": "node ./config/dev.js"
   },
   "dependencies": {},
   "devDependencies": {
