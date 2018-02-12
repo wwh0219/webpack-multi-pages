@@ -37,10 +37,9 @@ templatePath.map(function (item) {//生产html文件
     plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
         template: item,
         filename: p.replace('template.pug', 'index.html'),
-        chunks: ['vendor','common/index', p.replace(/template\.pug/, 'index')],
+        chunks: ['vendor', p.replace(/template\.pug/, 'index')],
         chunksSortMode:'manual'
     }))
-
 });
 const copyStaticPath = staticPath.map(function (item) {//拷贝静态文件
     return {

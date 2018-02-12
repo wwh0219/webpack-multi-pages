@@ -15,7 +15,7 @@ for(var prop in pathConfig.entry){
 }
 
 
-entry.vendor = path.resolve(pathConfig.src, './common/scripts/vendor');//第三方公共库;
+entry.vendor =pathConfig.vendor ;//第三方公共库;
 
 
 const baseConfig = {

@@ -7,7 +7,7 @@ var host='http://'+os.networkInterfaces()['以太网'][1].address
 
 var path=require('path');
 
-var entryPath=path.resolve(__dirname,'../src/**/scripts/index.js');
+var entryPath=path.resolve(__dirname,'../src/pages/**/scripts/index.js');
 
 var templatePath=path.resolve(__dirname,'../src/**/template.pug');
 
@@ -45,5 +45,6 @@ module.exports={
     //     return item.replace(path.basename(item),'static')
     // }),
     port:7799,
+    vendor:path.resolve(srcPath, './common/vendor'),
     host
 };
