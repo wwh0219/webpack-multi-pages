@@ -22,15 +22,13 @@ const plugins = [
     }),
     new webpack.optimize.CommonsChunkPlugin({//抽出公共库
         name: "vendor",
-
         // filename: "vendor.js"
         // (给 chunk 一个不同的名字)
 
         minChunks: 2,
         // 随着 entrie chunk 越来越多，
         // 这个配置保证没其它的模块会打包进 vendor chunk
-    }),
-
+    })
 ]
 const templatePath = pathConfig.template;
 

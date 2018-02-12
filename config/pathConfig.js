@@ -38,6 +38,7 @@ module.exports={
     output:outputPath,
     asset:assetPath,
     template:templateArray,
+    publicPath:'/', 
     src:srcPath,
     static:[path.resolve(srcPath,'./static')],
     // entryArray.map(item=>{

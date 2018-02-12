@@ -1,4 +1,9 @@
 {
-  "presets": ["latest","stage-3"]
-
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["ie >= 9"]
+      }
+    }], "stage-3"
+  ]
 }

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "node ./config/build.js",
-    "dev": "node ./config/dev2.js",
+    "dev": "node ./config/dev.js",
     "app": "node  ./config/webpack.app.js"
   },
   "dependencies": {},
@@ -12,7 +12,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
     "chalk": "^2.1.0",
     "copy-webpack-plugin": "^4.0.1",
@@ -23,6 +23,7 @@
     "glob": "^7.1.2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "install": "^0.10.4",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "node-sass": "^4.7.2",

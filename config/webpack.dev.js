@@ -6,13 +6,14 @@ const pathConfig = require('./pathConfig.js');
 
 const entry={}
 for(let prop in base.entry){
-    let temp=[path.resolve(__dirname,'./dev-client'),base.entry[prop]];
+    let temp=[base.entry[prop]];
     entry[prop]=temp
 }
 const dev = {
     entry,
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('development')

@@ -7,10 +7,7 @@ module.exports = [
     {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [path.resolve(__dirname,'../src')],
-        options: {
-            presets: ['latest']
-        }
+        include: [path.resolve(__dirname,'../src')]
     },
     {
         test: /\.css$/,

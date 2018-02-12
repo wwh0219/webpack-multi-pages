@@ -22,7 +22,7 @@ const baseConfig = {
     entry: entry,
     output: {
         path: pathConfig.output,
-        publicPath: "../",//二级目录“../../”  一级目录“../”
+        publicPath: pathConfig.publicPath,//二级目录“../../”  一级目录“../”
         filename: '[name].js',
         chunkFilename: '[name].js'
     },
@@ -33,8 +33,6 @@ const baseConfig = {
             common:path.resolve(pathConfig.src,'./common'),
             vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js'),
             '@':path.resolve(pathConfig.src),
-
-
         }
     },
     module: {
