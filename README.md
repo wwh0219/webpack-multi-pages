@@ -1,15 +1,1 @@
--#webpack-multi-pages;
--├─config                #webpack配置   <br>  
--├─dist                  #发布包        <br>  
--├─src                   #源码          <br>  
--│  ├─common             #公用          <br>  
--│  │  ├─style                          <br>  
--│  │  └─template                       <br>  
--│  ├─pages              #页面            <br>
--│  │  └─pageExample     #示例 需要有一个template.pug作为入口<br>
--│  │      ├─sass        #样式表<br>
--│  │      └─scripts     #脚本入口，需要有一个index.js<br>
--│  └─static             #静态文件<br>
--│      ├─css<br>
--│      ├─image<br>
--│      └─js<br>
+多页打包脚手架
