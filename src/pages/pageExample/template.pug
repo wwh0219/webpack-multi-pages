@@ -1,7 +1,8 @@
-extends ../../common/template/layout
+extends /common/template/layout
 block content
-    p src
+    p=projectPath
     div#app
-        img(src=require('./qq.png'))
+        img(src="${require(`./qq.png`)}")
+        a(href=`${projectPath}/zz`) asdasdas
         div  asdasddddd999
 

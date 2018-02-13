@@ -41,10 +41,8 @@ module.exports={
     publicPath:'/', 
     src:srcPath,
     static:[path.resolve(srcPath,'./static')],
-    // entryArray.map(item=>{
-    //     return item.replace(path.basename(item),'static')
-    // }),
     port:7799,
     vendor:path.resolve(srcPath, './common/vendor'),
-    host
+    host,
+    projectPath:'/pages'
 };

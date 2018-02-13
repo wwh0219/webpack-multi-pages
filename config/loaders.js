@@ -100,11 +100,15 @@ module.exports = [
     {
         test: /\.pug/,
         use: [
+            'html-loader?interpolate',
             {
-                loader: 'pug-loader',
+                loader: 'pug-html-loader',
                 options: {
                     pretty: true,
-                    basedir:pathConfig.src
+                    basedir:pathConfig.src,
+                    data:{
+                        projectPath:pathConfig.projectPath
+                    }
                 }
             }
         ],
