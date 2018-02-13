@@ -38,11 +38,11 @@ module.exports={
     output:outputPath,
     asset:assetPath,
     template:templateArray,
-    publicPath:'/', 
+    publicPath:'/fzlx/mobile/', 
     src:srcPath,
     static:[path.resolve(srcPath,'./static')],
     port:7799,
     vendor:path.resolve(srcPath, './common/vendor'),
     host,
-    projectPath:'/pages'
+    viewPath:'/fzlx/mobile/pages'//页面所在目录
 };

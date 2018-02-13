@@ -107,7 +107,8 @@ module.exports = [
                     pretty: true,
                     basedir:pathConfig.src,
                     data:{
-                        projectPath:pathConfig.projectPath
+                        publicPath:pathConfig.publicPath,
+                        viewPath:pathConfig.viewPath
                     }
                 }
             }

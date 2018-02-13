@@ -16,6 +16,7 @@ const options = {
     // hot: true,//热加载
     compress: true,
     progress: false,
+    publicPath:pathConfig.publicPath,
     quiet: true,
     watchOptions: {
         poll: true

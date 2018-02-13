@@ -5,7 +5,9 @@
     "build": "node ./config/build.js",
     "dev": "node ./config/dev.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.2"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
