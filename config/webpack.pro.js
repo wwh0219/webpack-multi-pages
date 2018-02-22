@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack')
 const merge = require('webpack-merge');
 const base = require('./webpack.base');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var pathConfig = require('./pathConfig.js');
 const pro = {
     output: {
@@ -10,12 +10,15 @@ const pro = {
         chunkFilename: '[name].[chunkhash].js'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-              warnings: false
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                compress: {
+                    warnings: false
+                }
             },
-            sourceMap: false
-          }),
+            sourceMap: false,
+            parallel: true
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
