@@ -5,6 +5,17 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const getDistPath = require('./utils').getDistPath;
 module.exports = [
     {
+        test: /\.tsx?$/,
+        use: [
+            {
+                loader: 'babel-loader',
+            },
+            {
+                loader: "ts-loader"
+            }
+        ]
+    },
+    {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [path.resolve(__dirname, '../src')]
@@ -105,16 +116,16 @@ module.exports = [
                 loader: 'pug-html-loader',
                 options: {
                     pretty: true,
-                    basedir:pathConfig.src,
-                    data:{
-                        publicPath:pathConfig.publicPath,
-                        viewPath:pathConfig.viewPath
+                    basedir: pathConfig.src,
+                    data: {
+                        publicPath: pathConfig.publicPath,
+                        viewPath: pathConfig.viewPath
                     }
                 }
             }
         ],
         include: [path.resolve(__dirname, '../src')]
-        
+
     },
     {
         test: /\.vue$/,
@@ -140,4 +151,4 @@ module.exports = [
     // }
 ]
 
-global.src=pathConfig.src
+global.src = pathConfig.src

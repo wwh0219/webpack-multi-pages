@@ -27,7 +27,7 @@ const baseConfig = {
         chunkFilename: '[name].js'
     },
     resolve: {
-        extensions: ['.js','.vue','.pug'],
+        extensions: ['.js', '.vue', '.pug', ".ts", ".tsx"],
         alias:{
             layout:path.resolve(__dirname,'../src/common/template'),
             common:path.resolve(pathConfig.src,'./common'),

@@ -6,7 +6,8 @@
     "dev": "node ./config/dev.js"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "typescript": "^2.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -38,6 +39,7 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "ts-loader": "3.5.0",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "url-loader": "^0.5.9",
     "webpack": "^3.8.1",
