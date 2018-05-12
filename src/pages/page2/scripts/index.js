@@ -1,1 +1,2 @@
-import '../sass/home.scss'
+import '../style.scss'
+console.log(process.env)

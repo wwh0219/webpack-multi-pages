@@ -13,12 +13,8 @@ const dev = {
     entry,
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('development')
-            }
-        })
+        new webpack.NamedModulesPlugin()
+
     ],
     devtool:'inline-source-map'
 };

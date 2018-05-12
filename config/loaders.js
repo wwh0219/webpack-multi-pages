@@ -1,4 +1,4 @@
-var isDev = require('./evn')
+var env = require('./evn')
 const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -17,7 +17,7 @@ module.exports = [
                 loader: "css-loader",
                 options: {
                     minimize: true,
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }],
 
@@ -47,15 +47,15 @@ module.exports = [
             use: [{
                 loader: "css-loader", options: {
                     minimize: true,
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }, {
                 loader: 'postcss-loader', options: {
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }, {
                 loader: "sass-loader", options: {
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }
             ]
@@ -69,15 +69,15 @@ module.exports = [
             use: [{
                 loader: "css-loader", options: {
                     minimize: true,
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }, {
                 loader: 'postcss-loader', options: {
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }, {
                 loader: "less-loader", options: {
-                    sourceMap: isDev
+                    sourceMap: env.isDev
                 }
             }
             ]
@@ -98,14 +98,15 @@ module.exports = [
         ]
     },
     {
-        test: /\.pug/,
+        test: /\.pug$/,
         use: [
             'html-loader?interpolate',
             {
-                loader: 'pug-html-loader',
+                loader: 'pug-plain-loader',
                 options: {
                     pretty: true,
-                    basedir:pathConfig.src,
+                    basedir:path.resolve(pathConfig.src, './common/template'),
+                    // basedir:pathConfig.src,
                     data:{
                         publicPath:pathConfig.publicPath,
                         viewPath:pathConfig.viewPath
@@ -120,8 +121,8 @@ module.exports = [
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-            sourceMap: isDev,
-            extractCSS: !isDev,
+            sourceMap: env.isDev,
+            extractCSS: !env.isDev,
             transformToRequire: {
                 video: 'src',
                 source: 'src',

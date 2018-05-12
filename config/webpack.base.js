@@ -33,6 +33,7 @@ const baseConfig = {
             common:path.resolve(pathConfig.src,'./common'),
             vue:path.resolve(__dirname,'../node_modules/vue/dist/vue.js'),
             '@':path.resolve(pathConfig.src),
+            style:path.resolve(pathConfig.src,'./common/style')
         }
     },
     module: {

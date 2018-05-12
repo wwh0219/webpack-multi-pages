@@ -2,8 +2,19 @@
 var glob=require('glob');
 
 var os=require('os')
-
-var host='http://'+os.networkInterfaces()['以太网'][1].address
+function getIPAdress(){
+    var interfaces = require('os').networkInterfaces();
+    for(var devName in interfaces){
+        var iface = interfaces[devName];
+        for(var i=0;i<iface.length;i++){
+            var alias = iface[i];
+            if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){
+                return alias.address;
+            }
+        }
+    }
+}
+var host='http://'+getIPAdress()
 
 var path=require('path');
 
@@ -33,16 +44,18 @@ entryArray.map((item)=>{
 })
 var outputPath=path.resolve(__dirname,'../dist');
 
+
+
 module.exports={
     entry:entryPath,
     output:outputPath,
     asset:assetPath,
     template:templateArray,
-    publicPath:'/fzlx/mobile/', 
+    publicPath:'/boe/',
     src:srcPath,
     static:[path.resolve(srcPath,'./static')],
     port:7799,
     vendor:path.resolve(srcPath, './common/vendor'),
     host,
-    viewPath:'/fzlx/mobile/pages'//页面所在目录
+    viewPath:'/boe/pages'//页面所在目录
 };

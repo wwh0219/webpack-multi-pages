@@ -1,4 +1,4 @@
-var isDev=require('./evn');
+const env=require('./evn');
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -11,11 +11,16 @@ const pathConfig = require('./pathConfig');
 
 const staticPath = pathConfig.static;
 
-
-
+const localEnv={}
+for(let prop in env){
+    localEnv[prop]=JSON.stringify(env[prop])
+}
 const plugins = [
+    new webpack.DefinePlugin({
+        'process.env':localEnv
+    }),
     new ExtractTextPlugin({//抽出js中的css
-        disable:isDev,
+        disable:env.isDev,
         filename: (getPath) => {
             return getPath('[name].[contenthash].css');
         }

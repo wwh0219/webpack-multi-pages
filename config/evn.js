@@ -1,2 +1,4 @@
 const isDev=(process.env.NODE_ENV === 'development');
-module.exports=isDev;
+const env=Object.assign({isDev},require('./pathConfig'))
+
+module.exports=env;

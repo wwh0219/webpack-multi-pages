@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const base = require('./webpack.base');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var pathConfig = require('./pathConfig.js');
+const env=require('./evn')
 const pro = {
     output: {
         filename: '[name].[chunkhash].js',
@@ -18,11 +19,6 @@ const pro = {
             },
             sourceMap: false,
             parallel: true
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
         })
     ],
     devtool:false
