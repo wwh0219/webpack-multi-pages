@@ -1,4 +1,4 @@
-var env = require('./evn')
+const env = require('./evn')
 const path = require('path');
 const pathConfig = require('./pathConfig');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");

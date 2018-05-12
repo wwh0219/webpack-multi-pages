@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge');
 const base = require('./webpack.base');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-var pathConfig = require('./pathConfig.js');
+const pathConfig = require('./pathConfig.js');
 const env=require('./evn')
 const pro = {
     output: {

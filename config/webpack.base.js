@@ -1,10 +1,10 @@
 /*node模块 */
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 /*配置文件*/
-var pathConfig = require('./pathConfig.js');
-var plugins=require('./plugins');
-var loaders=require('./loaders');
+const pathConfig = require('./pathConfig.js');
+const plugins=require('./plugins');
+const loaders=require('./loaders');
 /*输出配置*/
 
 

@@ -1,60 +1,60 @@
 /*使用glob库扫描src目录下的入口JS文件*/
-var glob=require('glob');
+const glob=require('glob');
 
-var os=require('os')
+const os=require('os')
 function getIPAdress(){
-    var interfaces = require('os').networkInterfaces();
-    for(var devName in interfaces){
-        var iface = interfaces[devName];
-        for(var i=0;i<iface.length;i++){
-            var alias = iface[i];
+    const interfaces = require('os').networkInterfaces();
+    for(const devName in interfaces){
+        const iface = interfaces[devName];
+        for(let i=0;i<iface.length;i++){
+            const alias = iface[i];
             if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){
                 return alias.address;
             }
         }
     }
 }
-var host='http://'+getIPAdress()
+const host='http://'+getIPAdress()
 
-var path=require('path');
+const path=require('path');
 
-var entryPath=path.resolve(__dirname,'../src/pages/**/scripts');
+const entryPath=path.resolve(__dirname,'../src/pages/**/scripts');
 
-var templatePath=path.resolve(__dirname,'../src/**/template.pug');
+const templatePath=path.resolve(__dirname,'../src/**/template.pug');
 
-var staticPath=path.resolve(__dirname,'../src/**/static');
+const staticPath=path.resolve(__dirname,'../src/**/static');
 
-var assetPath=path.resolve(__dirname,'../dist/asset/');
+const assetPath=path.resolve(__dirname,'../dist/asset/');
 
-var srcPath=path.resolve(__dirname,'../src');
+const srcPath=path.resolve(__dirname,'../src');
 
-var entryArray=glob.sync(entryPath).filter((item)=>{
+const entryArray=glob.sync(entryPath).filter((item)=>{
     return !(/static|template|libSource/).test(item)
 });
 
-var templateArray=glob.sync(templatePath).filter((item)=>{
+const templateArray=glob.sync(templatePath).filter((item)=>{
     return !(/static|common/).test(item)
 });
 
-var getDistPath=require('./utils').getDistPath;
+const getDistPath=require('./utils').getDistPath;
 
-var entryPath={};
+const entryPathMap={};
 
 entryArray.forEach((item)=>{
-    entryPath[item]=item
+    entryPathMap[item]=item
 })
-var outputPath=path.resolve(__dirname,'../dist');
+const outputPath=path.resolve(__dirname,'../dist');
 
 const chunksMap={}
 
-for(let prop in entryPath){
+for(let prop in entryPathMap){
     let p=getDistPath(prop)
-    chunksMap[p]= entryPath[prop]
+    chunksMap[p]= entryPathMap[prop]
 }
 chunksMap.style=path.resolve(srcPath,'./common/style.js')
 
 module.exports={
-    entry:entryPath,
+    entry:entryPathMap,
     output:outputPath,
     asset:assetPath,
     template:templateArray,

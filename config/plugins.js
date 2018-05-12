@@ -26,14 +26,30 @@ const plugins = [
             return getPath('[name].[contenthash].css');
         }
     }),
-    new webpack.optimize.CommonsChunkPlugin({//抽出公共库
-        name: "vendor",
-        // filename: "vendor.js"
-        // (给 chunk 一个不同的名字)
-
-        minChunks: 2,
-        // 随着 entrie chunk 越来越多，
-        // 这个配置保证没其它的模块会打包进 vendor chunk
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks (module) {
+            // any required modules inside node_modules are extracted to vendor
+            return (
+                module.resource &&
+                /\.js$/.test(module.resource) &&
+                module.resource.indexOf(
+                    path.join(__dirname, '../node_modules')
+                ) === 0
+            )
+        }
+    }),
+    // extract webpack runtime and module manifest to its own file in order to
+    // prevent vendor hash from being updated whenever app bundle is updated
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest',
+        minChunks: Infinity
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: Object.keys(pathConfig.chunksMap),
+        async: 'vendor-async',
+        children: true,
+        minChunks: 3
     })
 ]
 
@@ -48,9 +64,10 @@ for(let prop in pathConfig.chunksMap){
         plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
             template: path+'template.pug',
             filename: prop.replace('scripts','')+'index.html',
-            chunks: ['vendor','style', prop],
+            chunks: ['manifest','vendor','style', prop],
             chunksSortMode:'manual'
         }))
+
     }catch (e) {
 
     }

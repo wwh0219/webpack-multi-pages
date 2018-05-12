@@ -1,12 +1,12 @@
 process.env.NODE_ENV = 'production'
-var ora = require('ora')
-var rm = require('rimraf')
-var path = require('path')
-var chalk = require('chalk')
-var webpack = require('webpack')
-var config = require('./webpack.pro');
-var pathConfig = require('./pathConfig');
-var spinner = ora('building for production...')
+const ora = require('ora')
+const rm = require('rimraf')
+const path = require('path')
+const chalk = require('chalk')
+const webpack = require('webpack')
+const config = require('./webpack.pro');
+const pathConfig = require('./pathConfig');
+const spinner = ora('building for production...')
 spinner.start()
 
 rm(pathConfig.output, err => {
