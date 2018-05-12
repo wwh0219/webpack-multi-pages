@@ -1,5 +1,8 @@
 extends /layout
+prepend title
+    title ss
 block content
+    -var title='asdd'
     p=viewPath
     div#app
         img(src="${require(`./qq.png`)}")
@@ -8,5 +11,5 @@ block content
             |asdasdasd
             |qqqqqqqqqqqqqqqqq &nbsp
         div 
-            |asdasddddd999
+            |qqq
 

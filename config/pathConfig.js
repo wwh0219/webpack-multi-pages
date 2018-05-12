@@ -18,7 +18,7 @@ var host='http://'+getIPAdress()
 
 var path=require('path');
 
-var entryPath=path.resolve(__dirname,'../src/pages/**/scripts/index.js');
+var entryPath=path.resolve(__dirname,'../src/pages/**/scripts');
 
 var templatePath=path.resolve(__dirname,'../src/**/template.pug');
 
@@ -36,15 +36,22 @@ var templateArray=glob.sync(templatePath).filter((item)=>{
     return !(/static|common/).test(item)
 });
 
+var getDistPath=require('./utils').getDistPath;
 
 var entryPath={};
 
-entryArray.map((item)=>{
-    entryPath[item.replace(srcPath,'').replace(/.js$/g,'').replace('scripts','')]=item
+entryArray.forEach((item)=>{
+    entryPath[item]=item
 })
 var outputPath=path.resolve(__dirname,'../dist');
 
+const chunksMap={}
 
+for(let prop in entryPath){
+    let p=getDistPath(prop)
+    chunksMap[p]= entryPath[prop]
+}
+chunksMap.style=path.resolve(srcPath,'./common/style.js')
 
 module.exports={
     entry:entryPath,
@@ -55,7 +62,7 @@ module.exports={
     src:srcPath,
     static:[path.resolve(srcPath,'./static')],
     port:7799,
-    vendor:path.resolve(srcPath, './common/vendor'),
     host,
-    viewPath:'/boe/pages'//页面所在目录
+    viewPath:'/boe/pages',//页面所在目录
+    chunksMap
 };

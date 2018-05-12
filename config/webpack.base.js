@@ -5,21 +5,12 @@ var webpack = require('webpack');
 var pathConfig = require('./pathConfig.js');
 var plugins=require('./plugins');
 var loaders=require('./loaders');
-var getDistPath=require('./utils').getDistPath;
 /*输出配置*/
-var entry={};
 
-for(var prop in pathConfig.entry){
-    var p=getDistPath(prop)
-    entry[p]= pathConfig.entry[prop]
-}
-
-
-entry.vendor =pathConfig.vendor ;//第三方公共库;
 
 
 const baseConfig = {
-    entry: entry,
+    entry: pathConfig.chunksMap,
     output: {
         path: pathConfig.output,
         publicPath: pathConfig.publicPath,

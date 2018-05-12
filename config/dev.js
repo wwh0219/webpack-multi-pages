@@ -17,7 +17,6 @@ const options = {
     compress: true,
     progress: false,
     publicPath:pathConfig.publicPath,
-    quiet: true,
     watchOptions: {
         poll: true
     }
