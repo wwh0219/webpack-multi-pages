@@ -1,3 +1,2 @@
-import '../sass/home.scss'
-import $ from 'jquery'
-console.log($)
+import '../style.scss'
+console.log(321)

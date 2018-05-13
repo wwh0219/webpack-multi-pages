@@ -1,11 +1,7 @@
-const path = require('path');
-const webpack = require('webpack')
 const merge = require('webpack-merge');
 const base = require('./webpack.base');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const pathConfig = require('./pathConfig.js');
-const env=require('./evn')
-const pro = {
+const prod = {
     output: {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js'
@@ -28,5 +24,5 @@ const pro = {
 
 
 
-module.exports = merge(base, pro);
+module.exports = merge(base, prod);
 
