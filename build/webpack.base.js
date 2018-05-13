@@ -1,45 +1,31 @@
 const path=require('path')
-const paths = require('./paths')
-const env = require('../config/env')
+const paths = require('../config/paths')
+const env = require('../config/base.env')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs=require('fs');
+const webpack=require('webpack')
 const plugins=[];
 
+const favicon=path.resolve(paths.src,'./common/asset/favicon.ico')
 
-for(let prop in paths.entry){
-    let path=paths.entry[prop]
-    path=path.replace('scripts','');
-    const template=path+'template.pug'
+Object.keys(paths.entry).forEach(path=>{
+    const template=paths.entry[path].replace('scripts','')+'template.pug';
     try{
         fs.accessSync(template)
         plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
-            template: path+'template.pug',
-            filename: prop.replace('scripts','')+'index.html',
-            chunks: ['manifest','vendor','style', prop],
-            chunksSortMode:'manual'
+            template,
+            filename: path+'/index.html',
+            chunks: ['runtime','vendors', path],
+            chunksSortMode:'manual',
+            minify:true,
+            favicon
         }))
 
     }catch (e) {
 
     }
-
-}
-// Object.keys(paths.entry).forEach(path=>{
-//     const template=paths.entry[path].replace('scripts','template.pug')
-//     try{
-//         fs.accessSync(template)
-//         plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
-//             template,
-//             filename: path+'/index.html',
-//             chunks: ['runtime','vendors','style', path],
-//             chunksSortMode:'manual'
-//         }))
-//
-//     }catch (e) {
-//         console.log(e)
-//     }
-// })
+})
 
 module.exports = {
     mode: process.env.NODE_ENV,
@@ -47,8 +33,6 @@ module.exports = {
     output: {
         path: paths.output,
         publicPath: paths.publicPath,
-        filename: '[name].js',
-        chunkFilename: '[name].js'
     },
     module: {
         rules: [
@@ -115,6 +99,26 @@ module.exports = {
 
             },
             {
+                test: /\.less/,
+                use: [
+                    env.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader", options: {
+                            minimize: true,
+                            sourceMap: env.isDev
+                        }
+                    }, {
+                        loader: 'postcss-loader', options: {
+                            sourceMap: env.isDev
+                        }
+                    }, {
+                        loader: "less-loader", options: {
+                            sourceMap: env.isDev
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -130,13 +134,14 @@ module.exports = {
             },
         ]
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: env.isDev ? '[name].css' : '[name].[hash].css',
-            chunkFilename: env.isDev ? '[name].css' : '[name].[hash].css',
-        }),
+    resolve: {
+        extensions: ['.js','.vue','.pug'],
+        alias:{
+            '@':path.resolve(paths.src),
+            style:path.resolve(paths.src,'./common/style')
+        }
+    },
+    plugins:[
         ...plugins
     ]
 

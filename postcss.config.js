@@ -1,4 +1,4 @@
-const env=require('./config/env')
+const env=require('./config/base.env')
 module.exports = {
     plugins: [
         require('precss'),

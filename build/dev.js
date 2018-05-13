@@ -1,7 +1,7 @@
 'use strict'
 process.env.NODE_ENV = 'development'
 const webpack = require("webpack");
-const paths = require("./paths")
+const paths = require("../config/paths")
 const webpackDevServer = require("webpack-dev-server");
 const webpackConfig = require("./webpack.dev");
 const options = {
@@ -12,7 +12,7 @@ const options = {
     },
     contentBase: false,
     inline: true,//刷新
-    // hot: true,//热加载
+
     compress: true,
     progress: false,
     publicPath:paths.publicPath,
