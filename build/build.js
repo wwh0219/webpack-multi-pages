@@ -1,5 +1,6 @@
 'use strict'
 process.env.NODE_ENV = 'production'
+process.env.lang='de'
 const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')

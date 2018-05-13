@@ -18,10 +18,10 @@ entryArray.forEach((item)=>{
 
 module.exports={
     entry,
-    output:path.resolve(__dirname,'../dist'),
+    output:path.resolve(__dirname,`../dist/${process.env.lang}`),
     port:7799,
     host,
     viewPath:'/boe/pages',
-    publicPath:'/boe/',
+    publicPath:`/boe/${process.env.lang}/`,
     src
 };

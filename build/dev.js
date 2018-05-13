@@ -22,7 +22,6 @@ const options = {
     // inline:true
 }
 
-
 webpackDevServer.addDevServerEntrypoints(webpackConfig, options);
 const compiler = webpack(webpackConfig);
 const server = new webpackDevServer(compiler, options);

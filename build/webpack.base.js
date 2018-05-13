@@ -5,9 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs=require('fs');
 const webpack=require('webpack')
-const plugins=[];
-
 const favicon=path.resolve(paths.src,'./common/asset/favicon.ico')
+const plugins=[];
+const de=require("../config/langs/de.json")//多语言文件
 
 Object.keys(paths.entry).forEach(path=>{
     const template=paths.entry[path].replace('scripts','')+'template.pug';
@@ -81,7 +81,12 @@ module.exports = {
             {
                 test: /\.pug$/,
                 use: [
-                    'html-loader?interpolate',
+                    {
+                        loader:'html-loader',
+                        options:{
+                            interpolate:true
+                        }
+                    },
                     {
                         loader: 'pug-plain-loader',
                         options: {
@@ -90,7 +95,11 @@ module.exports = {
                             // basedir:paths.src,
                             data: {
                                 publicPath: paths.publicPath,
-                                viewPath: paths.viewPath
+                                viewPath: paths.viewPath,
+                                lang:process.env.lang,
+                                langJson:{
+                                    de
+                                }
                             }
                         }
                     }
