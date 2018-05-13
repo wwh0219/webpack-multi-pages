@@ -9,10 +9,13 @@ const entryArray=glob.sync(path.resolve(__dirname,'../src/pages/**/scripts'))
 
 const entry={};//wenpack entryMap
 
+const src=path.resolve(__dirname,'../src');
 entryArray.forEach((item)=>{
     entry[utils.getDistPath(item)]=item
 });
 
+
+entry.style=path.resolve(src,'./common/style.js')
 module.exports={
     entry,
     output:path.resolve(__dirname,'../dist'),
@@ -20,5 +23,5 @@ module.exports={
     host,
     viewPath:'/boe/pages',
     publicPath:'/boe',
-    src:path.resolve(__dirname,'../src'),
+    src
 };

@@ -17,6 +17,19 @@ const prod = {
             parallel: true
         })
     ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendors",
+                    chunks: "all"
+                }
+            },
+
+        },
+        runtimeChunk:'single'
+    },
     devtool:false
 };
 

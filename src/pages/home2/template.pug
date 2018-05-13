@@ -1,0 +1,14 @@
+extends /layout
+prepend title
+    title ss
+block content
+    -var title='asdd'
+    p=viewPath
+    div#app
+        img(src="${require(`./img.png`)}")
+        a(href=`${viewPath}/page2`)
+            |ggg
+            |xx &nbsp
+        div
+            |qqq
+

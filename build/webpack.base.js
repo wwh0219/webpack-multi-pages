@@ -1,7 +1,46 @@
 const path=require('path')
 const paths = require('./paths')
-const env = require('./env')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const env = require('../config/env')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs=require('fs');
+const plugins=[];
+
+
+for(let prop in paths.entry){
+    let path=paths.entry[prop]
+    path=path.replace('scripts','');
+    const template=path+'template.pug'
+    try{
+        fs.accessSync(template)
+        plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
+            template: path+'template.pug',
+            filename: prop.replace('scripts','')+'index.html',
+            chunks: ['manifest','vendor','style', prop],
+            chunksSortMode:'manual'
+        }))
+
+    }catch (e) {
+
+    }
+
+}
+// Object.keys(paths.entry).forEach(path=>{
+//     const template=paths.entry[path].replace('scripts','template.pug')
+//     try{
+//         fs.accessSync(template)
+//         plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
+//             template,
+//             filename: path+'/index.html',
+//             chunks: ['runtime','vendors','style', path],
+//             chunksSortMode:'manual'
+//         }))
+//
+//     }catch (e) {
+//         console.log(e)
+//     }
+// })
+
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: paths.entry,
@@ -16,9 +55,21 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS
+                    env.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    {
+                    loader: "css-loader", options: {
+                        minimize: true,
+                        sourceMap: env.isDev
+                    }
+                }, {
+                    loader: 'postcss-loader', options: {
+                        sourceMap: env.isDev
+                    }
+                }, {
+                    loader: "sass-loader", options: {
+                        sourceMap: env.isDev
+                    }
+                }
                 ]
             },
             {
@@ -26,20 +77,7 @@ module.exports = {
                 loader: 'babel-loader',
                 include: [path.resolve(__dirname, '../src')]
             },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [{
-                        loader: "css-loader",
-                        options: {
-                            minimize: true,
-                            sourceMap: env.isDev
-                        }
-                    }],
 
-                })
-            },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
@@ -55,50 +93,6 @@ module.exports = {
                     limit: 10000,
                     name: 'static/[name].[hash].[ext]'
                 }
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    //resolve-url-loader may be chained before sass-loader if necessary
-                    use: [{
-                        loader: "css-loader", options: {
-                            minimize: true,
-                            sourceMap: env.isDev
-                        }
-                    }, {
-                        loader: 'postcss-loader', options: {
-                            sourceMap: env.isDev
-                        }
-                    }, {
-                        loader: "sass-loader", options: {
-                            sourceMap: env.isDev
-                        }
-                    }
-                    ]
-                })
-            },
-            {
-                test: /\.less/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    //resolve-url-loader may be chained before sass-loader if necessary
-                    use: [{
-                        loader: "css-loader", options: {
-                            minimize: true,
-                            sourceMap: env.isDev
-                        }
-                    }, {
-                        loader: 'postcss-loader', options: {
-                            sourceMap: env.isDev
-                        }
-                    }, {
-                        loader: "less-loader", options: {
-                            sourceMap: env.isDev
-                        }
-                    }
-                    ]
-                })
             },
             {
                 test: /\.pug$/,
@@ -137,11 +131,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin({//抽出js中的css
-            disable:env.isDev,
-            filename: (getPath) => {
-                return getPath('[name].[contenthash].css');
-            }
-        })
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: env.isDev ? '[name].css' : '[name].[hash].css',
+            chunkFilename: env.isDev ? '[name].css' : '[name].[hash].css',
+        }),
+        ...plugins
     ]
+
 };

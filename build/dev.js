@@ -1,3 +1,4 @@
+'use strict'
 process.env.NODE_ENV = 'development'
 const webpack = require("webpack");
 const paths = require("./paths")
