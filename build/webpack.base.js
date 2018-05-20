@@ -95,11 +95,7 @@ module.exports = {
                             // basedir:paths.src,
                             data: {
                                 publicPath: paths.publicPath,
-                                viewPath: paths.viewPath,
-                                lang:process.env.lang,
-                                langJson:{
-                                    de
-                                }
+                                viewPath: paths.viewPath
                             }
                         }
                     }
