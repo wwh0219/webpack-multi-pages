@@ -10,15 +10,15 @@ const plugins=[];
 const de=require("../config/langs/de.json")//多语言文件
 
 Object.keys(paths.entry).forEach(path=>{
-    const template=paths.entry[path].replace('scripts','')+'template.pug';
+    const template=paths.entry[path].replace(/script(\.js$)?/,'')+'template.pug';
     try{
         fs.accessSync(template)
         plugins.push(new HtmlWebpackPlugin({  // Also generate a test.html
             template,
             filename: path+'/index.html',
-            chunks: ['runtime','vendors', path],
+            chunks: [],
             chunksSortMode:'manual',
-            minify:true,
+            minify:false,
             favicon
         }))
 
@@ -36,6 +36,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
+            },
             {
                 test: /\.scss$/,
                 use: [
@@ -67,7 +74,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/[name].[hash].[ext]',
+                    name: 'static/[name].[ext]',
                 }
             },
             {
@@ -75,7 +82,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/[name].[hash].[ext]'
+                    name: 'static/[name].[ext]'
                 }
             },
             {
@@ -95,7 +102,8 @@ module.exports = {
                             // basedir:paths.src,
                             data: {
                                 publicPath: paths.publicPath,
-                                viewPath: paths.viewPath
+                                viewPath: paths.viewPath,
+                                env:process.env.NODE_ENV
                             }
                         }
                     }
@@ -143,7 +151,9 @@ module.exports = {
         extensions: ['.js','.vue','.pug'],
         alias:{
             '@':path.resolve(paths.src),
-            style:path.resolve(paths.src,'./common/style')
+            style:path.resolve(paths.src,'./common/style'),
+            asset:path.resolve(paths.src,'./common/asset'),
+            common:path.resolve(paths.src,'./common'),
         }
     },
     plugins:[

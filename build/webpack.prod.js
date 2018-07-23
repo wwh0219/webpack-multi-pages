@@ -4,17 +4,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const defineEnv=require('../config/dev.env')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path=require('path')
 const prod = {
     output: {
-        filename: '[name]/script.[chunkhash].js',
-        chunkFilename: '[name]/script.[chunkhash].js'
+        filename: '[name]/script.js',
+        chunkFilename: '[name]/script.js'
     },
     plugins: [
         new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename:'[name]/style.[hash].css',
-            chunkFilename: '[name]/style.[hash].css',
+            filename: "[name].css",
         }),
         new UglifyJsPlugin({
             uglifyOptions: {
@@ -27,17 +26,30 @@ const prod = {
         }),
         new webpack.DefinePlugin({
             ENV:defineEnv
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from:path.resolve(__dirname,'../src/static/'),
+                to:path.resolve(__dirname,'../dist/static'),
+                toType:'dir'
+            }
+        ])
     ],
     optimization: {
         splitChunks: {
             cacheGroups: {
+                styles: {
+                    name: 'styles',
+                    test: /\.scss$/,
+                    chunks: 'all',
+                    enforce: true
+                },
                 vendor: {
-                    test: /([\\/](node_modules|common)[\\/])/,
+                    test: /([\\/](node_modules|common)[\\/]).*(\.js$)/,
                     name: "vendors",
                     chunks: "all",
                     minSize:1
-                }
+                },
             },
 
         },
