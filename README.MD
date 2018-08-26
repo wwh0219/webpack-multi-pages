@@ -1,6 +1,6 @@
 # webpack多页项目模板
 
-##项目名称：{{name}}
+## 项目名称：{{name}}
 
 >{{description}}
 ## 目录结构
