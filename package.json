@@ -1,7 +1,7 @@
 {
-  "name": "webpack-multi-pages",
+  "name": "{{name}}",
   "version": "0.0.1",
-  "description": "a webpack multi page engine",
+  "description": "{{description}}",
   "main": "index.js",
   "scripts": {
     "build": "node ./build/build.js",
@@ -11,7 +11,7 @@
     "webpack",
     "nodejs"
   ],
-  "author": "wenwenhai",
+  "author": "{{author}}",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.4.1",
