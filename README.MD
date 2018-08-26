@@ -28,3 +28,7 @@ a(href=`${viewPath}page`)  //page是相对pages下某个具体页面目录的路
 ```pug
 img(src='${require(`@/common/assets/img-de.png`)}') //此写法下的图片会被webpack打包处理
 ```
+- 生成目录
+```shell
+npm run mk-page -- --name={{name}}
+```
