@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c39f71f-a1fa-44b7-928f-1b149da42e77" name="默认" comment="😄">
-      <change afterPath="$PROJECT_DIR$/build/mk-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/page-template/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/page-template/template.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6c39f71f-a1fa-44b7-928f-1b149da42e77" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -25,52 +19,54 @@
     <session id="1208351934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="MD" value="2" />
+          <entry key="MD" value="3" />
           <entry key="css" value="2" />
-          <entry key="html" value="6" />
-          <entry key="js" value="39" />
+          <entry key="html" value="7" />
+          <entry key="js" value="42" />
           <entry key="json" value="4" />
           <entry key="png" value="1" />
-          <entry key="pug" value="11" />
+          <entry key="pug" value="13" />
           <entry key="scss" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="6" />
+          <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="4" />
-          <entry key="Jade" value="11" />
-          <entry key="JavaScript" value="39" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Jade" value="13" />
+          <entry key="JavaScript" value="42" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="SCSS" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="MD" value="53" />
-          <entry key="js" value="643" />
+          <entry key="MD" value="55" />
+          <entry key="js" value="663" />
           <entry key="json" value="30" />
-          <entry key="pug" value="75" />
+          <entry key="pug" value="87" />
           <entry key="scss" value="52" />
-          <entry key="txt" value="4" />
+          <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="30" />
-          <entry key="Jade" value="75" />
-          <entry key="JavaScript" value="643" />
-          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="Jade" value="87" />
+          <entry key="JavaScript" value="663" />
+          <entry key="PLAIN_TEXT" value="61" />
           <entry key="SCSS" value="52" />
         </counts>
       </usages-collector>
@@ -79,33 +75,65 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/build/webpack.base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="2002">
+              <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/mk-page.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/zzz/template.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+            <state relative-caret-position="110">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.MD">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="330">
+                <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.MD">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
+        <entry file="file://$PROJECT_DIR$/dist/home/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/home/template.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/webpack.dev.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/dev.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -192,10 +220,7 @@
         <option value="$PROJECT_DIR$/build/webpack.prod.js" />
         <option value="$PROJECT_DIR$/src/common/styles.js" />
         <option value="$PROJECT_DIR$/src/common/main.js" />
-        <option value="$PROJECT_DIR$/build/webpack.base.js" />
-        <option value="$PROJECT_DIR$/dist/home/index.html" />
         <option value="$PROJECT_DIR$/src/pages/demo1/template.pug" />
-        <option value="$PROJECT_DIR$/src/pages/home/template.pug" />
         <option value="$PROJECT_DIR$/src/common/style/main.scss" />
         <option value="$PROJECT_DIR$/config/paths.js" />
         <option value="$PROJECT_DIR$/config/page-template/script.js" />
@@ -203,7 +228,12 @@
         <option value="$PROJECT_DIR$/dist/zzz/b/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/build/mk-page.js" />
+        <option value="$PROJECT_DIR$/src/pages/zzz/template.pug" />
+        <option value="$PROJECT_DIR$/build/dev.js" />
+        <option value="$PROJECT_DIR$/build/webpack.base.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/template.pug" />
         <option value="$PROJECT_DIR$/README.MD" />
+        <option value="$PROJECT_DIR$/dist/home/index.html" />
       </list>
     </option>
   </component>
@@ -240,7 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,17 +280,24 @@
             <path>
               <item name="webpack-multi-pages" type="b2602c69:ProjectViewProjectNode" />
               <item name="webpack-multi-pages" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webpack-multi-pages" type="b2602c69:ProjectViewProjectNode" />
               <item name="webpack-multi-pages" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webpack-multi-pages" type="b2602c69:ProjectViewProjectNode" />
               <item name="webpack-multi-pages" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webpack-multi-pages" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpack-multi-pages" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webpack-multi-pages" type="b2602c69:ProjectViewProjectNode" />
@@ -273,12 +309,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/webpack.dev.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devweb" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
@@ -372,10 +409,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.mk-page" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Node.js.mk-page.js" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.mk-page" />
+        <item itemvalue="Node.js.mk-page.js" />
         <item itemvalue="Node.js.paths.js" />
       </list>
     </recent_temporary>
@@ -397,7 +434,9 @@
       <workItem from="1526193249548" duration="325000" />
       <workItem from="1526193582465" duration="4279000" />
       <workItem from="1535271113201" duration="6268000" />
-      <workItem from="1535277492883" duration="4268000" />
+      <workItem from="1535277492883" duration="5629000" />
+      <workItem from="1535299849343" duration="1055000" />
+      <workItem from="1535370922505" duration="234000" />
     </task>
     <task id="LOCAL-00001" summary="配置微调">
       <created>1526101139193</created>
@@ -427,19 +466,32 @@
       <option name="project" value="LOCAL" />
       <updated>1535276319451</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="😄">
+      <created>1535282139732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1535282139732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="🙂">
+      <created>1535300724362</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1535300724362</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33504000" />
+    <option name="totallyTimeSpent" value="36154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.509061" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5074135" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.49093905" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.4925865" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -449,7 +501,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32853982" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32853982" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -466,6 +518,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="配置微调" />
+    <MESSAGE value="" />
+    <MESSAGE value="" />
     <MESSAGE value="" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
@@ -519,8 +573,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/utils.js" />
-    <entry file="file://$PROJECT_DIR$/config/loaders.js" />
     <entry file="file://$PROJECT_DIR$/config/plugins.js" />
     <entry file="file://$PROJECT_DIR$/src/common/assets/img-de.png">
       <provider selected="true" editor-type-id="images" />
@@ -541,9 +593,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/style/_mixin.scss" />
     <entry file="file://$PROJECT_DIR$/src/common/style/abstract/mixins/_screen.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.dev.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/util.js">
@@ -568,30 +617,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/main/script.9d9bddf1a0385568d655.js" />
-    <entry file="file://$PROJECT_DIR$/build/webpack.base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/home/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/pages/demo1/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/demo1/template.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/demo2/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/demo2/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/demo1/script.js" />
+    <entry file="file://$PROJECT_DIR$/src/pages/demo1/template.pug" />
+    <entry file="file://$PROJECT_DIR$/src/pages/demo2/template.pug" />
+    <entry file="file://$PROJECT_DIR$/src/pages/demo2/script.js" />
     <entry file="file://$PROJECT_DIR$/postcss.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -599,9 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/test/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/test/template.pug" />
     <entry file="file://$PROJECT_DIR$/src/pages/home/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -637,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/template.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/style/views/home.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -654,12 +674,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/zzz/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/zzz/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/zzz/script.js" />
+    <entry file="file://$PROJECT_DIR$/pages/zzz/template.pug" />
     <entry file="file://$PROJECT_DIR$/config/paths.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -670,18 +686,10 @@
     <entry file="file://$PROJECT_DIR$/src/pages/zzz/script.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/z/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/z/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/b/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/b/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/z/template.pug" />
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/z/script.js" />
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/b/script.js" />
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/b/template.pug" />
     <entry file="file://$PROJECT_DIR$/config/page-template/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -696,30 +704,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/c/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/zzz/b/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="85" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/zzz/c/template.pug">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/mk-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/c/script.js" />
+    <entry file="file://$PROJECT_DIR$/dist/zzz/b/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/c/template.pug" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/mk-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/zzz/template.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -729,12 +741,36 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+          <first_editor relative-caret-position="330">
+            <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/template.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>
